@@ -1,0 +1,44 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+atom-text-editor::shadow .cursors {
+  .cursor:not(:last-child) {
+    // Style for all cursors except the last one
+    color: lighten(@background-color-selected, 15%);
+  }
+  
+  // Blink on
+  &:not(.blink-off) .cursor {
+    // Style for all cursors except the last cursor
+    &:not(:last-child) {
+      opacity: 1.0;
+    }
+    
+    // Style for the last cursor
+    &:last-child {
+      // ... when multiple cursors are active
+      &:not(:only-child) {
+        //...
+      }
+    }
+  }
+  
+  // Blink off
+  &.blink-off .cursor {
+    // Style for all cursors except the last cursor
+    &:not(:last-child) {
+      opacity: 0.75;
+    }
+    
+    // Style for the last cursor
+    &:last-child {
+      // ... when multiple cursors are active
+      &:not(:only-child) {
+        //...
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+# Keybindings require three things to be fully defined: A selector that is
+# matched against the focused element, the keystroke and the command to
+# execute.
+#
+# Below is a basic keybinding which registers on all platforms by applying to
+# the root workspace element.
+
+# For more detailed documentation see
+# https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+
+#'atom-workspace':
+#  # Key bindings for multi-cursor
+#  'alt-x':                'multi-cursor-plus:mark'
+#  'alt-up':               'multi-cursor-plus:move-up'
+#  'alt-down':             'multi-cursor-plus:move-down'
+#  'alt-left':             'multi-cursor-plus:move-left'
+#  'alt-right':            'multi-cursor-plus:move-right'
+#  'ctrl-alt-left':        'multi-cursor-plus:move-to-beginning-of-word'
+#  'ctrl-alt-right':       'multi-cursor-plus:move-to-end-of-word'
+#  'alt-home':             'multi-cursor-plus:move-to-first-character-of-line'
+#  'alt-end':              'multi-cursor-plus:move-to-end-of-line'
+#  'ctrl-alt-home':        'multi-cursor-plus:move-to-top'
+#  'ctrl-alt-end':         'multi-cursor-plus:move-to-bottom'
+#  'alt-shift-up':         'multi-cursor-plus:select-up'
+#  'alt-shift-down':       'multi-cursor-plus:select-down'
+#  'alt-shift-left':       'multi-cursor-plus:select-left'
+#  'alt-shift-right':      'multi-cursor-plus:select-right'
+#  'ctrl-alt-shift-left':  'multi-cursor-plus:select-to-beginning-of-word'
+#  'ctrl-alt-shift-right': 'multi-cursor-plus:select-to-end-of-word'
+#  'alt-shift-home':       'multi-cursor-plus:select-to-first-character-of-line'
+#  'alt-shift-end':        'multi-cursor-plus:select-to-end-of-line'
+#  'ctrl-alt-shift-home':  'multi-cursor-plus:select-to-top'
+#  'ctrl-alt-shift-end':   'multi-cursor-plus:select-to-bottom'
