@@ -40,10 +40,10 @@ with `multi-cursor-plus`.
 
 ## Installation
 
-1. Either go to Settings > Install and search for `multi-cursor-plus`.
+1. Go to Settings > Install and search for `multi-cursor-plus`.
 2. Add key bindings to `~/.atom/keymap.cson` (also available via Settings >
-   Keybindings > "your keymap file"). You can use the "recommended" key bindings
-   below and customize them to your liking.
+   Keybindings > "your keymap file"). You can start with the "recommended" key
+   bindings below and customize them to your liking.
 
 
 ## Key bindings
