@@ -1,10 +1,9 @@
 {
   "name": "multi-cursor-plus",
   "main": "./lib/multi-cursor-plus",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Improved multi-cursor functionality for Atom",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-text-editor": [
       "multi-cursor-plus:mark",
@@ -35,6 +34,5 @@
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
