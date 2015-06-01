@@ -2,8 +2,9 @@
 
 https://atom.io/packages/multi-cursor-plus
 
-`multi-cursor-plus` allows you to create multiple cursor anywhere in a buffer
-using only your keyboard.
+Hate reaching for the mouse? `multi-cursor-plus` allows you to create multiple
+cursors anywhere in the buffer, using only your keyboard. Supports multiple
+selections and removing previous cursors at any time. Easy to use. Amazing!
 
 To avoid conflicts with Atom's core and other packages, **this package does not
 define any key bindings by default**.
@@ -20,14 +21,14 @@ this:
 - Move to where you want your first cursor to be
 - "Mark" this position with `Alt-X` (`multi-cursor-plus:mark`)
 - Move to a new position while holding down `Alt` (`multi-cursor-plus:move-*`)
-- "Mark" the new position
+- Mark the new position
 - Rinse and repeat!
 
-If you want to remove one of your cursors, just "mark" it again!
+To remove one of the cursors, just mark it again!
 
 The package provides all the usual movement and selection commands. You can move
-to the beginning of the line with `Alt-Home`, select text by holding down `Alt`
-and `Shift`, etc.
+to the beginning of the line with `Alt-Home`, select text while holding down
+`Alt-Shift`, etc.
 
 In short: do everything you normally do, just add the `Alt` key.
 
@@ -85,8 +86,9 @@ have to reach for the cursor keys. ;)
 
 ## Known issues
 
-Currently you cannot mark the first *and* last positions in the buffer. Pull
-request are welcome to fix this!
+Currently, marking the first *and* last positions in the buffer at the same
+time makes `multi-cursor-plus` behave erratically. Pull requests are welcome
+to fix this!
 
 Don't hesitate to report any issues you have! Before sending in a pull request,
 consider creating an issue for discussion. :)
@@ -99,3 +101,4 @@ If you're a fan of "keyboard only" navigation, have a look at these packages:
 - [line-jumper](https://atom.io/packages/line-jumper)
   (*note:* conflicts with "recommended" key bindings)
 - [easy-motion-redux](https://atom.io/packages/easy-motion-redux)
+
