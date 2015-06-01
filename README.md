@@ -100,5 +100,5 @@ If you're a fan of "keyboard only" navigation, have a look at these packages:
 - [ctrl-dir-scroll](https://atom.io/packages/ctrl-dir-scroll)
 - [line-jumper](https://atom.io/packages/line-jumper)
   (*note:* conflicts with "recommended" key bindings)
-- [easy-motion-redux](https://atom.io/packages/easy-motion-redux)
+- [jumpy](https://atom.io/packages/jumpy)
 
