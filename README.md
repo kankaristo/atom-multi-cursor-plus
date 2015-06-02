@@ -6,12 +6,12 @@ Hate reaching for the mouse? `multi-cursor-plus` allows you to create multiple
 cursors anywhere in the buffer, using only your keyboard. Supports multiple
 selections and removing previous cursors at any time. Easy to use. Amazing!
 
+![multi-cursor-plus showcase](https://raw.githubusercontent.com/kankaristo/atom-multi-cursor-plus/gif/showcase.gif)
+
 To avoid conflicts with Atom's core and other packages, **this package does not
 define any key bindings by default**.
 
 See the *Key bindings* section for a set of "recommended" key bindings.
-
-**TODO: Add a GIF showcase. Send me one, if you'd like!**
 
 
 ## Usage
