@@ -1,7 +1,7 @@
 {
   "name": "multi-cursor-plus",
   "main": "./lib/multi-cursor-plus",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Improved multi-cursor functionality for Atom",
   "keywords": [],
   "activationCommands": {
