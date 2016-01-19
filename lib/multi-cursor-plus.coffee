@@ -138,40 +138,30 @@ module.exports =
     if destroyedSelection
       return
     
+    # "Re-mark" the current buffer range (in order to set invalidate: 'never')
+    editor.markBufferRange(
+      [[range.start.row, range.start.column], [range.end.row, range.end.column]],
+      {
+        type: 'selection',
+        invalidate: 'never'
+      }
+    )
+    
     # FIXME: Cannot currently mark the beginning *and* the end of the buffer
     if beginningHasCursor
-      # The beginning of the buffer is a special case
-      # Insert a character, mark, and remove the character
-      
       # Last row and column in buffer
       lastRow = editor.getLastBufferRow()
       lastColumn = editor.lineTextForBufferRow(lastRow).length
       
-      # Create mark at the end of the buffer
-      editor.markBufferRange(
-        [[lastRow, lastColumn], [lastRow, lastColumn]],
-        {
-          # NOTE: editor.id may be private?
-          type: 'selection',
-          editorId: editor.id,
-          invalidate: 'never'
-        }
-      )
+      # Create new cursor at the end of the buffer
+      # (can't be added at the current position, or it will be invalidated)
+      editor.addCursorAtBufferPosition([lastRow, lastColumn])
     else
-      # Any other position in the buffer
-      
-      # Create mark at the beginning of the file
-      editor.markBufferRange(
-        [[0, 0], [0, 0]],
-        {
-          # NOTE: editor.id may be private?
-          type: 'selection',
-          editorId: editor.id,
-          invalidate: 'never'
-        }
-      )
+      # Create new cursor at the beginning of the buffer
+      # (can't be added at the current position, or it will be invalidated)
+      editor.addCursorAtBufferPosition([0, 0])
     
-    # Move the new mark to the last cursor's position
+    # Move the new cursor to the correct position
     editor.getLastSelection().cursor.setBufferPosition([row, column])
   
   
