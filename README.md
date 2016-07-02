@@ -50,12 +50,24 @@ with `multi-cursor-plus`.
 ## Key bindings
 
 Below is a "recommended" set of key bindings, which you can add to your
-`keymap.cson`. Please note that these key bindings override Atom's default
-multi-cursor functionality.
+`keymap.cson`. Please note that these key bindings override some of Atom's
+default keybindings.
 
 ```
+'atom-workspace atom-text-editor':
+  # Unset editor keybindings (conflict with multi-cursor-plus)
+  'alt-left':        'unset!'
+  'alt-right':       'unset!'
+  'alt-shift-left':  'unset!'
+  'alt-shift-right': 'unset!'
+
+'atom-workspace atom-text-editor:not([mini])':
+  # Unset editor keybindings (conflict with multi-cursor-plus)
+  'alt-shift-up': 'unset!'
+  'alt-shift-down': 'unset!'
+
 'atom-workspace':
-  # Key bindings for multi-cursor
+  # Key bindings for multi-cursor-plus
   'alt-x':                'multi-cursor-plus:mark'
   'alt-up':               'multi-cursor-plus:move-up'
   'alt-down':             'multi-cursor-plus:move-down'
