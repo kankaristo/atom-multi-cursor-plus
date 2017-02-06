@@ -142,7 +142,6 @@ module.exports =
     editor.markBufferRange(
       [[range.start.row, range.start.column], [range.end.row, range.end.column]],
       {
-        type: 'selection',
         invalidate: 'never'
       }
     )
