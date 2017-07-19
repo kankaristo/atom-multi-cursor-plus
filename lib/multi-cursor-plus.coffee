@@ -1,4 +1,5 @@
-{CompositeDisposable} = require 'atom'
+{CompositeDisposable, Point, Range} = require 'atom'
+_ = require 'underscore-plus'
 
 
 module.exports =
@@ -76,6 +77,79 @@ module.exports =
         @selectToBottom()
   
   
+    @subscriptions.add atom.commands.add 'atom-text-editor',
+      'multi-cursor-plus:mark-previous-like-this': =>
+        @markPreviousLikeThis()
+    @subscriptions.add atom.commands.add 'atom-text-editor',
+      'multi-cursor-plus:mark-next-like-this': =>
+        @markNextLikeThis()
+
+  markPreviousLikeThis: ->
+    editor = atom.workspace.getActiveTextEditor()
+    selections = editor?.getSelections()
+    bufferRange = editor?.getBuffer()?.getRange()
+
+    return unless selections?
+
+    if selections.length == 0
+      return
+
+    firstSelection = selections[0]
+
+    start = (selection) -> selection.getBufferRange().start
+
+    for selection in selections
+      if start(selection).isLessThan(start(firstSelection))
+        firstSelection = selection
+
+    currentText = firstSelection.getText()
+
+    return unless currentText?.length
+
+    selectionRange = firstSelection.getBufferRange()
+
+    searchRange = (new Range(bufferRange.start, selectionRange.start))
+      .translate(new Point(0, 0), new Point(0, -1))
+
+    editor.backwardsScanInBufferRange new RegExp(_.escapeRegExp(currentText)),
+      searchRange,
+      ({match, range, stop}) =>
+        editor.addSelectionForBufferRange range
+        stop()
+
+  markNextLikeThis: ->
+    editor = atom.workspace.getActiveTextEditor()
+    selections = editor?.getSelections()
+    bufferRange = editor?.getBuffer()?.getRange()
+
+    return unless selections?
+
+    if selections.length == 0
+      return
+
+    lastSelection = selections[0]
+
+    end = (selection) -> selection.getBufferRange().end
+
+    for selection in selections
+      if end(lastSelection).isLessThan(end(selection))
+        lastSelection = selection
+
+    currentText = lastSelection.getText()
+
+    return unless currentText?.length
+
+    selectionRange = lastSelection.getBufferRange()
+
+    searchRange = (new Range(selectionRange.end, bufferRange.end))
+      .translate new Point(0, 1)
+
+    editor.scanInBufferRange new RegExp(_.escapeRegExp(currentText)),
+      searchRange,
+      ({match, range, stop}) =>
+        editor.addSelectionForBufferRange range
+        stop()
+
   #
   # Deactivate the package.
   #
